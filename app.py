@@ -49,7 +49,7 @@ def tts(text):
 def home():
     return render_template("index.html")
 
-app.route('/speech', methods=['POST'])
+@app.route('/speech', methods=['POST'])
 def speech():
     file = request.files["pdf"]
     textt = request.form.get('text')
