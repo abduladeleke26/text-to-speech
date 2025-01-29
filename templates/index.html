@@ -20,7 +20,7 @@
                 <button type="submit" class="btn btn-outline-secondary btn-lg px-4" style="margin-top: -15%;">Submit</button>
               {% if audio %}
                   <audio  style="margin-left: -130px; margin-top: 25%;" controls>
-                        <source src="{{ audio }}" type="audio/wav">
+                        <source src="{{ audio }}?v={{ time }}" type="audio/wav">
                     </audio>
               {% endif %}
 
