@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 url = "https://texttospeech.googleapis.com/v1/text:synthesize"
 
-params = {"key": "AIzaSyCOKo4vBihEZ0oNFFzjzmtBzCZIItmkqns"}
+params = {"key": os.environ.get('FLASK_KEY')}
 
 UPLOAD_FOLDER = "files"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
