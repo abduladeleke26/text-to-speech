@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 url = "https://texttospeech.googleapis.com/v1/text:synthesize"
 
-params = {"key": "AIzaSyCOKo4vBihEZ0oNFFzjzmtBzCZIItmkqns"}
+params = {"key": os.environ.get('FLASK_KEY')}
 
 UPLOAD_FOLDER = "files"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -41,7 +41,7 @@ def tts(text):
         with open(filename, 'wb') as f:
             f.write(array)
 
-        return filename  # Return the filename instead of a fixed one
+        return filename
 
     return None
 
